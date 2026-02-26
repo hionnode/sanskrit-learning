@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const lessons = await getCollection('lessons');
+const firstLesson = lessons.sort((a, b) => a.data.sort_order - b.data.sort_order)[0];
+const firstLessonUrl = firstLesson ? `/hi/learn/${firstLesson.id}` : '/hi/learn';
+---
+<BaseLayout title="संस्कृत सीखें — शून्य से शास्त्र तक" description="निःशुल्क, मुक्त-स्रोत संस्कृत शिक्षण मंच। सातवलेकर जी की संस्कृत स्वयं शिक्षक पर आधारित। वर्णमाला से शास्त्र तक — चरणबद्ध शिक्षण।">
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 pt-16 pb-20 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-ink dark:text-stone-100 leading-tight mb-4">
+        <span lang="sa" class="text-vermillion dark:text-vermillion-light">संस्कृत</span> सीखें
+      </h1>
+      <p class="text-xl md:text-2xl text-stone-600 dark:text-stone-400 mb-2">
+        शून्य से शास्त्र तक
+      </p>
+      <p class="text-clay dark:text-stone-400 max-w-lg mx-auto mb-8">
+        निःशुल्क, मुक्त-स्रोत संस्कृत शिक्षण मंच। सातवलेकर जी की "संस्कृत स्वयं शिक्षक" पर आधारित।
+      </p>
+      <a
+        href={firstLessonUrl}
+        class="inline-flex items-center gap-2 px-8 py-4 bg-vermillion-gradient text-white text-lg font-medium rounded-xl shadow-page hover:shadow-card-hover transition-all min-h-[44px]"
+      >
+        सीखना शुरू करें
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- 4-Stage Overview -->
+  <section class="bg-surface-palm/50 dark:bg-charcoal-800/50 py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-ink dark:text-stone-100 text-center mb-10">
+        चार चरणों में संस्कृत
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <a href="/hi/learn" class="block bg-white dark:bg-charcoal-800 rounded-xl p-6 border border-border-subtle dark:border-charcoal-700 hover:border-vermillion dark:hover:border-vermillion hover:shadow-card-hover shadow-card transition-all">
+          <div class="flex items-center gap-3 mb-3">
+            <span aria-hidden="true" class="w-8 h-8 flex items-center justify-center rounded-full bg-vermillion-gradient text-white text-sm font-bold">1</span>
+            <h3 class="font-bold text-ink dark:text-stone-100">आधार</h3>
+          </div>
+          <p class="text-sm text-stone-600 dark:text-stone-400">वर्णमाला, शब्द रूप, धातु रूप, सन्धि — संस्कृत की नींव</p>
+        </a>
+        <div class="bg-white dark:bg-charcoal-800 rounded-xl p-6 border border-border-subtle dark:border-charcoal-700 opacity-60 pointer-events-none cursor-default" aria-disabled="true">
+          <div class="flex items-center gap-3 mb-3">
+            <span aria-hidden="true" class="w-8 h-8 flex items-center justify-center rounded-full bg-vermillion-gradient text-white text-sm font-bold">2</span>
+            <h3 class="font-bold text-ink dark:text-stone-100">मध्यम</h3>
+          </div>
+          <p class="text-sm text-stone-600 dark:text-stone-400">उन्नत सन्धि, समास, कृदन्त — गहन व्याकरण</p>
+          <p class="text-xs text-stone-400 mt-2">शीघ्र उपलब्ध</p>
+        </div>
+        <a href="/hi/library" class="block bg-white dark:bg-charcoal-800 rounded-xl p-6 border border-border-subtle dark:border-charcoal-700 hover:border-vermillion dark:hover:border-vermillion hover:shadow-card-hover shadow-card transition-all">
+          <div class="flex items-center gap-3 mb-3">
+            <span aria-hidden="true" class="w-8 h-8 flex items-center justify-center rounded-full bg-vermillion-gradient text-white text-sm font-bold">3</span>
+            <h3 class="font-bold text-ink dark:text-stone-100">पठन अभ्यास</h3>
+          </div>
+          <p class="text-sm text-stone-600 dark:text-stone-400">सुभाषित, हितोपदेश, पञ्चतन्त्र, भगवद्गीता — मूल ग्रन्थ पठन</p>
+        </a>
+        <div class="bg-white dark:bg-charcoal-800 rounded-xl p-6 border border-border-subtle dark:border-charcoal-700 opacity-60 pointer-events-none cursor-default" aria-disabled="true">
+          <div class="flex items-center gap-3 mb-3">
+            <span aria-hidden="true" class="w-8 h-8 flex items-center justify-center rounded-full bg-vermillion-gradient text-white text-sm font-bold">4</span>
+            <h3 class="font-bold text-ink dark:text-stone-100">उन्नत</h3>
+          </div>
+          <p class="text-sm text-stone-600 dark:text-stone-400">माहेश्वर सूत्र, प्रत्याहार, अष्टाध्यायी परिचय</p>
+          <p class="text-xs text-stone-400 mt-2">शीघ्र उपलब्ध</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Source Attribution -->
+  <section class="py-12">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <p class="text-sm text-clay dark:text-stone-400">
+        सामग्री स्रोत: दत्तात्रेय शास्त्री सातवलेकर कृत
+        <a href="https://archive.org/details/20211101_20211101_1057" target="_blank" rel="noopener noreferrer" class="underline hover:text-vermillion dark:hover:text-vermillion-light transition-colors">"संस्कृत स्वयं शिक्षक"</a>
+        (भाग 1 व 2) — सार्वजनिक प्रभाव-क्षेत्र में उपलब्ध।
+      </p>
+    </div>
+  </section>
+</BaseLayout>
