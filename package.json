@@ -1,0 +1,27 @@
+{
+  "name": "sanskrit-shiksha",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "pipeline:download": "bash scripts/content-pipeline/download.sh",
+    "pipeline:split": "node scripts/content-pipeline/split-lessons.mjs",
+    "pipeline:prepare": "npm run pipeline:download && npm run pipeline:split"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.2.6",
+    "@astrojs/preact": "^4.1.0",
+    "astro": "^5.7.10",
+    "preact": "^10.26.5"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "@tailwindcss/typography": "^0.5.16",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3"
+  }
+}

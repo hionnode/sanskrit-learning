@@ -1,0 +1,1067 @@
+{
+  "generatedAt": "2026-02-26T05:24:03.632Z",
+  "parts": {
+    "part1": {
+      "sourceFile": "part1_djvu.txt",
+      "totalLessons": 92,
+      "lessons": [
+        {
+          "file": "paath-01.txt",
+          "lessonNumber": 1,
+          "headerLine": "() प्रथम पाठ",
+          "sourceLineStart": 336,
+          "lineCount": 108
+        },
+        {
+          "file": "paath-02.txt",
+          "lessonNumber": 2,
+          "headerLine": "पाठ |",
+          "sourceLineStart": 444,
+          "lineCount": 119
+        },
+        {
+          "file": "paath-03.txt",
+          "lessonNumber": 3,
+          "headerLine": "पाठ 2",
+          "sourceLineStart": 563,
+          "lineCount": 192
+        },
+        {
+          "file": "paath-04.txt",
+          "lessonNumber": 4,
+          "headerLine": "पाठ 4",
+          "sourceLineStart": 755,
+          "lineCount": 156
+        },
+        {
+          "file": "paath-05.txt",
+          "lessonNumber": 5,
+          "headerLine": "पाठ 5",
+          "sourceLineStart": 911,
+          "lineCount": 167
+        },
+        {
+          "file": "paath-06.txt",
+          "lessonNumber": 6,
+          "headerLine": "पाठ 6",
+          "sourceLineStart": 1078,
+          "lineCount": 144
+        },
+        {
+          "file": "paath-07.txt",
+          "lessonNumber": 7,
+          "headerLine": "पाठ 7",
+          "sourceLineStart": 1222,
+          "lineCount": 188
+        },
+        {
+          "file": "paath-08.txt",
+          "lessonNumber": 8,
+          "headerLine": "पाठ 8",
+          "sourceLineStart": 1410,
+          "lineCount": 181
+        },
+        {
+          "file": "paath-09.txt",
+          "lessonNumber": 9,
+          "headerLine": "पाठ 9",
+          "sourceLineStart": 1591,
+          "lineCount": 162
+        },
+        {
+          "file": "paath-10.txt",
+          "lessonNumber": 10,
+          "headerLine": "पाठ 0",
+          "sourceLineStart": 1753,
+          "lineCount": 231
+        },
+        {
+          "file": "paath-11.txt",
+          "lessonNumber": 11,
+          "headerLine": "पाठ ]",
+          "sourceLineStart": 1984,
+          "lineCount": 212
+        },
+        {
+          "file": "paath-12.txt",
+          "lessonNumber": 12,
+          "headerLine": "पाठ ]2",
+          "sourceLineStart": 2196,
+          "lineCount": 216
+        },
+        {
+          "file": "paath-13.txt",
+          "lessonNumber": 13,
+          "headerLine": "पाठ 35",
+          "sourceLineStart": 2412,
+          "lineCount": 463
+        },
+        {
+          "file": "paath-14.txt",
+          "lessonNumber": 14,
+          "headerLine": "पाठ 5",
+          "sourceLineStart": 2875,
+          "lineCount": 232
+        },
+        {
+          "file": "paath-15.txt",
+          "lessonNumber": 15,
+          "headerLine": "पाठ 46",
+          "sourceLineStart": 3107,
+          "lineCount": 203
+        },
+        {
+          "file": "paath-16.txt",
+          "lessonNumber": 16,
+          "headerLine": "पाठ 7",
+          "sourceLineStart": 3310,
+          "lineCount": 160
+        },
+        {
+          "file": "paath-17.txt",
+          "lessonNumber": 17,
+          "headerLine": "पाठ 48",
+          "sourceLineStart": 3470,
+          "lineCount": 200
+        },
+        {
+          "file": "paath-18.txt",
+          "lessonNumber": 18,
+          "headerLine": "पाठ व9",
+          "sourceLineStart": 3670,
+          "lineCount": 177
+        },
+        {
+          "file": "paath-19.txt",
+          "lessonNumber": 19,
+          "headerLine": "पाठ 20",
+          "sourceLineStart": 3847,
+          "lineCount": 149
+        },
+        {
+          "file": "paath-20.txt",
+          "lessonNumber": 20,
+          "headerLine": "पाठ 2",
+          "sourceLineStart": 3996,
+          "lineCount": 245
+        },
+        {
+          "file": "paath-21.txt",
+          "lessonNumber": 21,
+          "headerLine": "पाठ 22",
+          "sourceLineStart": 4241,
+          "lineCount": 209
+        },
+        {
+          "file": "paath-22.txt",
+          "lessonNumber": 22,
+          "headerLine": "पाठ 25",
+          "sourceLineStart": 4450,
+          "lineCount": 200
+        },
+        {
+          "file": "paath-23.txt",
+          "lessonNumber": 23,
+          "headerLine": "पाठ 24",
+          "sourceLineStart": 4650,
+          "lineCount": 391
+        },
+        {
+          "file": "paath-24.txt",
+          "lessonNumber": 24,
+          "headerLine": "पाठ 26",
+          "sourceLineStart": 5041,
+          "lineCount": 142
+        },
+        {
+          "file": "paath-25.txt",
+          "lessonNumber": 25,
+          "headerLine": "पाठ 27",
+          "sourceLineStart": 5183,
+          "lineCount": 211
+        },
+        {
+          "file": "paath-26.txt",
+          "lessonNumber": 26,
+          "headerLine": "पाठ 28",
+          "sourceLineStart": 5394,
+          "lineCount": 185
+        },
+        {
+          "file": "paath-27.txt",
+          "lessonNumber": 27,
+          "headerLine": "पाठ 29",
+          "sourceLineStart": 5579,
+          "lineCount": 227
+        },
+        {
+          "file": "paath-28.txt",
+          "lessonNumber": 28,
+          "headerLine": "पाठ 30",
+          "sourceLineStart": 5806,
+          "lineCount": 206
+        },
+        {
+          "file": "paath-29.txt",
+          "lessonNumber": 29,
+          "headerLine": "पाठ 3|",
+          "sourceLineStart": 6012,
+          "lineCount": 203
+        },
+        {
+          "file": "paath-30.txt",
+          "lessonNumber": 30,
+          "headerLine": "पाठ 32",
+          "sourceLineStart": 6215,
+          "lineCount": 161
+        },
+        {
+          "file": "paath-31.txt",
+          "lessonNumber": 31,
+          "headerLine": "पाठ 335",
+          "sourceLineStart": 6376,
+          "lineCount": 207
+        },
+        {
+          "file": "paath-32.txt",
+          "lessonNumber": 32,
+          "headerLine": "पाठ 34",
+          "sourceLineStart": 6583,
+          "lineCount": 223
+        },
+        {
+          "file": "paath-33.txt",
+          "lessonNumber": 33,
+          "headerLine": "पाठ 35",
+          "sourceLineStart": 6806,
+          "lineCount": 233
+        },
+        {
+          "file": "paath-34.txt",
+          "lessonNumber": 34,
+          "headerLine": "पाठ $6",
+          "sourceLineStart": 7039,
+          "lineCount": 391
+        },
+        {
+          "file": "paath-35.txt",
+          "lessonNumber": 35,
+          "headerLine": "पाठ 38",
+          "sourceLineStart": 7430,
+          "lineCount": 157
+        },
+        {
+          "file": "paath-36.txt",
+          "lessonNumber": 36,
+          "headerLine": "पाठ 39",
+          "sourceLineStart": 7587,
+          "lineCount": 163
+        },
+        {
+          "file": "paath-37.txt",
+          "lessonNumber": 37,
+          "headerLine": "पाठ 40",
+          "sourceLineStart": 7750,
+          "lineCount": 200
+        },
+        {
+          "file": "paath-38.txt",
+          "lessonNumber": 38,
+          "headerLine": "पाठ 4]",
+          "sourceLineStart": 7950,
+          "lineCount": 113
+        },
+        {
+          "file": "paath-39.txt",
+          "lessonNumber": 39,
+          "headerLine": "पाठ 42",
+          "sourceLineStart": 8063,
+          "lineCount": 156
+        },
+        {
+          "file": "paath-40.txt",
+          "lessonNumber": 40,
+          "headerLine": "पाठ 435",
+          "sourceLineStart": 8219,
+          "lineCount": 148
+        },
+        {
+          "file": "paath-41.txt",
+          "lessonNumber": 41,
+          "headerLine": "पाठ 44",
+          "sourceLineStart": 8367,
+          "lineCount": 217
+        },
+        {
+          "file": "paath-42.txt",
+          "lessonNumber": 42,
+          "headerLine": "पाठ 46",
+          "sourceLineStart": 8584,
+          "lineCount": 118
+        },
+        {
+          "file": "paath-43.txt",
+          "lessonNumber": 43,
+          "headerLine": "पाठ 47",
+          "sourceLineStart": 8702,
+          "lineCount": 73
+        },
+        {
+          "file": "paath-44.txt",
+          "lessonNumber": 44,
+          "headerLine": "पाठ 48",
+          "sourceLineStart": 8775,
+          "lineCount": 85
+        },
+        {
+          "file": "paath-45.txt",
+          "lessonNumber": 45,
+          "headerLine": "पाठ 49",
+          "sourceLineStart": 8860,
+          "lineCount": 50
+        },
+        {
+          "file": "paath-46.txt",
+          "lessonNumber": 46,
+          "headerLine": "पाठ 80",
+          "sourceLineStart": 8910,
+          "lineCount": 369
+        },
+        {
+          "file": "paath-47.txt",
+          "lessonNumber": 47,
+          "headerLine": "पाठ 7",
+          "sourceLineStart": 9279,
+          "lineCount": 197
+        },
+        {
+          "file": "paath-48.txt",
+          "lessonNumber": 48,
+          "headerLine": "पाठ 2",
+          "sourceLineStart": 9476,
+          "lineCount": 275
+        },
+        {
+          "file": "paath-49.txt",
+          "lessonNumber": 49,
+          "headerLine": "पाठ $",
+          "sourceLineStart": 9751,
+          "lineCount": 279
+        },
+        {
+          "file": "paath-50.txt",
+          "lessonNumber": 50,
+          "headerLine": "पाठ 4",
+          "sourceLineStart": 10030,
+          "lineCount": 270
+        },
+        {
+          "file": "paath-51.txt",
+          "lessonNumber": 51,
+          "headerLine": "पाठ 5",
+          "sourceLineStart": 10300,
+          "lineCount": 174
+        },
+        {
+          "file": "paath-52.txt",
+          "lessonNumber": 52,
+          "headerLine": "पाठ 6",
+          "sourceLineStart": 10474,
+          "lineCount": 329
+        },
+        {
+          "file": "paath-53.txt",
+          "lessonNumber": 53,
+          "headerLine": "पाठ 7",
+          "sourceLineStart": 10803,
+          "lineCount": 746
+        },
+        {
+          "file": "paath-54.txt",
+          "lessonNumber": 54,
+          "headerLine": "पाठ 9",
+          "sourceLineStart": 11549,
+          "lineCount": 879
+        },
+        {
+          "file": "paath-55.txt",
+          "lessonNumber": 55,
+          "headerLine": "पाठ 7",
+          "sourceLineStart": 12428,
+          "lineCount": 752
+        },
+        {
+          "file": "paath-56.txt",
+          "lessonNumber": 56,
+          "headerLine": "पाठ 3",
+          "sourceLineStart": 13180,
+          "lineCount": 267
+        },
+        {
+          "file": "paath-57.txt",
+          "lessonNumber": 57,
+          "headerLine": "पाठ 4",
+          "sourceLineStart": 13447,
+          "lineCount": 676
+        },
+        {
+          "file": "paath-58.txt",
+          "lessonNumber": 58,
+          "headerLine": "पाठ 6",
+          "sourceLineStart": 14123,
+          "lineCount": 248
+        },
+        {
+          "file": "paath-59.txt",
+          "lessonNumber": 59,
+          "headerLine": "पाठ |7",
+          "sourceLineStart": 14371,
+          "lineCount": 301
+        },
+        {
+          "file": "paath-60.txt",
+          "lessonNumber": 60,
+          "headerLine": "पाठ 8",
+          "sourceLineStart": 14672,
+          "lineCount": 604
+        },
+        {
+          "file": "paath-61.txt",
+          "lessonNumber": 61,
+          "headerLine": "पाठ 20",
+          "sourceLineStart": 15276,
+          "lineCount": 184
+        },
+        {
+          "file": "paath-62.txt",
+          "lessonNumber": 62,
+          "headerLine": "पाठ 2]",
+          "sourceLineStart": 15460,
+          "lineCount": 181
+        },
+        {
+          "file": "paath-63.txt",
+          "lessonNumber": 63,
+          "headerLine": "पाठ 22",
+          "sourceLineStart": 15641,
+          "lineCount": 307
+        },
+        {
+          "file": "paath-64.txt",
+          "lessonNumber": 64,
+          "headerLine": "पाठ 23",
+          "sourceLineStart": 15948,
+          "lineCount": 491
+        },
+        {
+          "file": "paath-65.txt",
+          "lessonNumber": 65,
+          "headerLine": "पाठ 25",
+          "sourceLineStart": 16439,
+          "lineCount": 149
+        },
+        {
+          "file": "paath-66.txt",
+          "lessonNumber": 66,
+          "headerLine": "पाठ 27",
+          "sourceLineStart": 16588,
+          "lineCount": 99
+        },
+        {
+          "file": "paath-67.txt",
+          "lessonNumber": 67,
+          "headerLine": "पाठ 28",
+          "sourceLineStart": 16687,
+          "lineCount": 86
+        },
+        {
+          "file": "paath-68.txt",
+          "lessonNumber": 68,
+          "headerLine": "पाठ 299",
+          "sourceLineStart": 16773,
+          "lineCount": 171
+        },
+        {
+          "file": "paath-69.txt",
+          "lessonNumber": 69,
+          "headerLine": "पाठ 34",
+          "sourceLineStart": 16944,
+          "lineCount": 75
+        },
+        {
+          "file": "paath-70.txt",
+          "lessonNumber": 70,
+          "headerLine": "पाठ 32",
+          "sourceLineStart": 17019,
+          "lineCount": 142
+        },
+        {
+          "file": "paath-71.txt",
+          "lessonNumber": 71,
+          "headerLine": "पाठ 34",
+          "sourceLineStart": 17161,
+          "lineCount": 459
+        },
+        {
+          "file": "paath-72.txt",
+          "lessonNumber": 72,
+          "headerLine": "पाठ 36",
+          "sourceLineStart": 17620,
+          "lineCount": 397
+        },
+        {
+          "file": "paath-73.txt",
+          "lessonNumber": 73,
+          "headerLine": "पाठ 38",
+          "sourceLineStart": 18017,
+          "lineCount": 184
+        },
+        {
+          "file": "paath-74.txt",
+          "lessonNumber": 74,
+          "headerLine": "पाठ 39",
+          "sourceLineStart": 18201,
+          "lineCount": 120
+        },
+        {
+          "file": "paath-75.txt",
+          "lessonNumber": 75,
+          "headerLine": "पाठ 40",
+          "sourceLineStart": 18321,
+          "lineCount": 227
+        },
+        {
+          "file": "paath-76.txt",
+          "lessonNumber": 76,
+          "headerLine": "पाठ 4",
+          "sourceLineStart": 18548,
+          "lineCount": 93
+        },
+        {
+          "file": "paath-77.txt",
+          "lessonNumber": 77,
+          "headerLine": "पाठ 42",
+          "sourceLineStart": 18641,
+          "lineCount": 158
+        },
+        {
+          "file": "paath-78.txt",
+          "lessonNumber": 78,
+          "headerLine": "पाठ 43",
+          "sourceLineStart": 18799,
+          "lineCount": 179
+        },
+        {
+          "file": "paath-79.txt",
+          "lessonNumber": 79,
+          "headerLine": "पाठ 44",
+          "sourceLineStart": 18978,
+          "lineCount": 269
+        },
+        {
+          "file": "paath-80.txt",
+          "lessonNumber": 80,
+          "headerLine": "पाठ 45",
+          "sourceLineStart": 19247,
+          "lineCount": 213
+        },
+        {
+          "file": "paath-81.txt",
+          "lessonNumber": 81,
+          "headerLine": "पाठ 46",
+          "sourceLineStart": 19460,
+          "lineCount": 215
+        },
+        {
+          "file": "paath-82.txt",
+          "lessonNumber": 82,
+          "headerLine": "पाठ 47",
+          "sourceLineStart": 19675,
+          "lineCount": 211
+        },
+        {
+          "file": "paath-83.txt",
+          "lessonNumber": 83,
+          "headerLine": "पाठ 48",
+          "sourceLineStart": 19886,
+          "lineCount": 438
+        },
+        {
+          "file": "paath-84.txt",
+          "lessonNumber": 84,
+          "headerLine": "पाठ 50",
+          "sourceLineStart": 20324,
+          "lineCount": 309
+        },
+        {
+          "file": "paath-85.txt",
+          "lessonNumber": 85,
+          "headerLine": "पाठ 5]",
+          "sourceLineStart": 20633,
+          "lineCount": 213
+        },
+        {
+          "file": "paath-86.txt",
+          "lessonNumber": 86,
+          "headerLine": "पाठ 5०9",
+          "sourceLineStart": 20846,
+          "lineCount": 249
+        },
+        {
+          "file": "paath-87.txt",
+          "lessonNumber": 87,
+          "headerLine": "पाठ 53",
+          "sourceLineStart": 21095,
+          "lineCount": 290
+        },
+        {
+          "file": "paath-88.txt",
+          "lessonNumber": 88,
+          "headerLine": "पाठ 54",
+          "sourceLineStart": 21385,
+          "lineCount": 258
+        },
+        {
+          "file": "paath-89.txt",
+          "lessonNumber": 89,
+          "headerLine": "पाठ 55",
+          "sourceLineStart": 21643,
+          "lineCount": 328
+        },
+        {
+          "file": "paath-90.txt",
+          "lessonNumber": 90,
+          "headerLine": "पाठ 57",
+          "sourceLineStart": 21971,
+          "lineCount": 124
+        },
+        {
+          "file": "paath-91.txt",
+          "lessonNumber": 91,
+          "headerLine": "पाठ 58",
+          "sourceLineStart": 22095,
+          "lineCount": 97
+        },
+        {
+          "file": "paath-92.txt",
+          "lessonNumber": 92,
+          "headerLine": "पाठ 59",
+          "sourceLineStart": 22192,
+          "lineCount": 123
+        }
+      ]
+    },
+    "part2": {
+      "sourceFile": "part2_djvu.txt",
+      "totalLessons": 58,
+      "lessons": [
+        {
+          "file": "paath-01.txt",
+          "lessonNumber": 1,
+          "headerLine": "पाठ पहला",
+          "sourceLineStart": 315,
+          "lineCount": 59
+        },
+        {
+          "file": "paath-02.txt",
+          "lessonNumber": 2,
+          "headerLine": "पाठ पहला",
+          "sourceLineStart": 374,
+          "lineCount": 285
+        },
+        {
+          "file": "paath-03.txt",
+          "lessonNumber": 3,
+          "headerLine": "पाठ दूसरा",
+          "sourceLineStart": 659,
+          "lineCount": 340
+        },
+        {
+          "file": "paath-04.txt",
+          "lessonNumber": 4,
+          "headerLine": "पाठ तीसरा",
+          "sourceLineStart": 999,
+          "lineCount": 251
+        },
+        {
+          "file": "paath-05.txt",
+          "lessonNumber": 5,
+          "headerLine": "पाठ चौथा",
+          "sourceLineStart": 1250,
+          "lineCount": 302
+        },
+        {
+          "file": "paath-06.txt",
+          "lessonNumber": 6,
+          "headerLine": "पाठ पांचवां",
+          "sourceLineStart": 1552,
+          "lineCount": 239
+        },
+        {
+          "file": "paath-07.txt",
+          "lessonNumber": 7,
+          "headerLine": "पाठ छठा",
+          "sourceLineStart": 1791,
+          "lineCount": 99
+        },
+        {
+          "file": "paath-08.txt",
+          "lessonNumber": 8,
+          "headerLine": "पाठ छठा",
+          "sourceLineStart": 1890,
+          "lineCount": 337
+        },
+        {
+          "file": "paath-09.txt",
+          "lessonNumber": 9,
+          "headerLine": "पाठ सातवां",
+          "sourceLineStart": 2227,
+          "lineCount": 880
+        },
+        {
+          "file": "paath-10.txt",
+          "lessonNumber": 10,
+          "headerLine": "पाठ नवां",
+          "sourceLineStart": 3107,
+          "lineCount": 1042
+        },
+        {
+          "file": "paath-11.txt",
+          "lessonNumber": 11,
+          "headerLine": "पाठ ग्यारहवां",
+          "sourceLineStart": 4149,
+          "lineCount": 670
+        },
+        {
+          "file": "paath-12.txt",
+          "lessonNumber": 12,
+          "headerLine": "पाठ बारहवां",
+          "sourceLineStart": 4819,
+          "lineCount": 219
+        },
+        {
+          "file": "paath-13.txt",
+          "lessonNumber": 13,
+          "headerLine": "पाठ तेरहवाँ .. ।",
+          "sourceLineStart": 5038,
+          "lineCount": 246
+        },
+        {
+          "file": "paath-14.txt",
+          "lessonNumber": 14,
+          "headerLine": "पाठ चौदहवां",
+          "sourceLineStart": 5284,
+          "lineCount": 399
+        },
+        {
+          "file": "paath-15.txt",
+          "lessonNumber": 15,
+          "headerLine": "पाठ पन्द्रहवां",
+          "sourceLineStart": 5683,
+          "lineCount": 394
+        },
+        {
+          "file": "paath-16.txt",
+          "lessonNumber": 16,
+          "headerLine": "पाठ सोलहवां",
+          "sourceLineStart": 6077,
+          "lineCount": 363
+        },
+        {
+          "file": "paath-17.txt",
+          "lessonNumber": 17,
+          "headerLine": "पाठ सत्रहवां -",
+          "sourceLineStart": 6440,
+          "lineCount": 259
+        },
+        {
+          "file": "paath-18.txt",
+          "lessonNumber": 18,
+          "headerLine": "पाठ अठारहवां",
+          "sourceLineStart": 6699,
+          "lineCount": 396
+        },
+        {
+          "file": "paath-19.txt",
+          "lessonNumber": 19,
+          "headerLine": "पाठ उनन्‍नीसवां",
+          "sourceLineStart": 7095,
+          "lineCount": 148
+        },
+        {
+          "file": "paath-20.txt",
+          "lessonNumber": 20,
+          "headerLine": "पाठ बीसवां",
+          "sourceLineStart": 7243,
+          "lineCount": 160
+        },
+        {
+          "file": "paath-21.txt",
+          "lessonNumber": 21,
+          "headerLine": "पाठ इक्कीसवां",
+          "sourceLineStart": 7403,
+          "lineCount": 70
+        },
+        {
+          "file": "paath-22.txt",
+          "lessonNumber": 22,
+          "headerLine": "पाठ इक्कीसवां -",
+          "sourceLineStart": 7473,
+          "lineCount": 183
+        },
+        {
+          "file": "paath-23.txt",
+          "lessonNumber": 23,
+          "headerLine": "पाठ बाईसवां",
+          "sourceLineStart": 7656,
+          "lineCount": 342
+        },
+        {
+          "file": "paath-24.txt",
+          "lessonNumber": 24,
+          "headerLine": "पाठ तेईसवां",
+          "sourceLineStart": 7998,
+          "lineCount": 303
+        },
+        {
+          "file": "paath-25.txt",
+          "lessonNumber": 25,
+          "headerLine": "पाठ चौबीसवां",
+          "sourceLineStart": 8301,
+          "lineCount": 215
+        },
+        {
+          "file": "paath-26.txt",
+          "lessonNumber": 26,
+          "headerLine": "पाठ पच्चौसवां",
+          "sourceLineStart": 8516,
+          "lineCount": 42
+        },
+        {
+          "file": "paath-27.txt",
+          "lessonNumber": 27,
+          "headerLine": "पाठ सत्ताईसवां",
+          "sourceLineStart": 8558,
+          "lineCount": 158
+        },
+        {
+          "file": "paath-28.txt",
+          "lessonNumber": 28,
+          "headerLine": "पाठ अट्डाईसवां",
+          "sourceLineStart": 8716,
+          "lineCount": 106
+        },
+        {
+          "file": "paath-29.txt",
+          "lessonNumber": 29,
+          "headerLine": "पाठ उनतीसवां",
+          "sourceLineStart": 8822,
+          "lineCount": 170
+        },
+        {
+          "file": "paath-30.txt",
+          "lessonNumber": 30,
+          "headerLine": "पाठ इकतीसवां",
+          "sourceLineStart": 8992,
+          "lineCount": 80
+        },
+        {
+          "file": "paath-31.txt",
+          "lessonNumber": 31,
+          "headerLine": "पाठ बत्तीसवां",
+          "sourceLineStart": 9072,
+          "lineCount": 45
+        },
+        {
+          "file": "paath-32.txt",
+          "lessonNumber": 32,
+          "headerLine": "पाठ तेंतीसवां",
+          "sourceLineStart": 9117,
+          "lineCount": 85
+        },
+        {
+          "file": "paath-33.txt",
+          "lessonNumber": 33,
+          "headerLine": "पाठ चौंतीसवां",
+          "sourceLineStart": 9202,
+          "lineCount": 191
+        },
+        {
+          "file": "paath-34.txt",
+          "lessonNumber": 34,
+          "headerLine": "पाठ पेंतीसवां",
+          "sourceLineStart": 9393,
+          "lineCount": 122
+        },
+        {
+          "file": "paath-35.txt",
+          "lessonNumber": 35,
+          "headerLine": "पाठ छत्तीसवां",
+          "sourceLineStart": 9515,
+          "lineCount": 305
+        },
+        {
+          "file": "paath-36.txt",
+          "lessonNumber": 36,
+          "headerLine": "पाठ सेंतीसवां",
+          "sourceLineStart": 9820,
+          "lineCount": 25
+        },
+        {
+          "file": "paath-37.txt",
+          "lessonNumber": 37,
+          "headerLine": "पाठ अड़तीसवां",
+          "sourceLineStart": 9845,
+          "lineCount": 118
+        },
+        {
+          "file": "paath-38.txt",
+          "lessonNumber": 38,
+          "headerLine": "पाठ अड़तीसवां",
+          "sourceLineStart": 9963,
+          "lineCount": 160
+        },
+        {
+          "file": "paath-39.txt",
+          "lessonNumber": 39,
+          "headerLine": "पाठ उन्तालीसवां",
+          "sourceLineStart": 10123,
+          "lineCount": 89
+        },
+        {
+          "file": "paath-40.txt",
+          "lessonNumber": 40,
+          "headerLine": "पाठ चालीसवां",
+          "sourceLineStart": 10212,
+          "lineCount": 166
+        },
+        {
+          "file": "paath-41.txt",
+          "lessonNumber": 41,
+          "headerLine": "पाठ इकतालीसवां",
+          "sourceLineStart": 10378,
+          "lineCount": 313
+        },
+        {
+          "file": "paath-42.txt",
+          "lessonNumber": 42,
+          "headerLine": "पाठ चौवालीसवां",
+          "sourceLineStart": 10691,
+          "lineCount": 303
+        },
+        {
+          "file": "paath-43.txt",
+          "lessonNumber": 43,
+          "headerLine": "पाठ पेंतालीसवां",
+          "sourceLineStart": 10994,
+          "lineCount": 368
+        },
+        {
+          "file": "paath-44.txt",
+          "lessonNumber": 44,
+          "headerLine": "पाठ छयालीसवां",
+          "sourceLineStart": 11362,
+          "lineCount": 186
+        },
+        {
+          "file": "paath-45.txt",
+          "lessonNumber": 45,
+          "headerLine": "पाठ सैंतालीसवां",
+          "sourceLineStart": 11548,
+          "lineCount": 267
+        },
+        {
+          "file": "paath-46.txt",
+          "lessonNumber": 46,
+          "headerLine": "पाठ अड्भतालीसवां",
+          "sourceLineStart": 11815,
+          "lineCount": 221
+        },
+        {
+          "file": "paath-47.txt",
+          "lessonNumber": 47,
+          "headerLine": "पाठ उनचासवां",
+          "sourceLineStart": 12036,
+          "lineCount": 228
+        },
+        {
+          "file": "paath-48.txt",
+          "lessonNumber": 48,
+          "headerLine": "पाठ पच्तासवां",
+          "sourceLineStart": 12264,
+          "lineCount": 85
+        },
+        {
+          "file": "paath-49.txt",
+          "lessonNumber": 49,
+          "headerLine": "पाठ पच्तासवां",
+          "sourceLineStart": 12349,
+          "lineCount": 225
+        },
+        {
+          "file": "paath-50.txt",
+          "lessonNumber": 50,
+          "headerLine": "पाठ इक्‍्यावनवां",
+          "sourceLineStart": 12574,
+          "lineCount": 246
+        },
+        {
+          "file": "paath-51.txt",
+          "lessonNumber": 51,
+          "headerLine": "पाठ बावनवां",
+          "sourceLineStart": 12820,
+          "lineCount": 201
+        },
+        {
+          "file": "paath-52.txt",
+          "lessonNumber": 52,
+          "headerLine": "पाठ तरेपनवां",
+          "sourceLineStart": 13021,
+          "lineCount": 283
+        },
+        {
+          "file": "paath-53.txt",
+          "lessonNumber": 53,
+          "headerLine": "पाठ चौवनवां",
+          "sourceLineStart": 13304,
+          "lineCount": 129
+        },
+        {
+          "file": "paath-54.txt",
+          "lessonNumber": 54,
+          "headerLine": "पाठ पचपनवां",
+          "sourceLineStart": 13433,
+          "lineCount": 99
+        },
+        {
+          "file": "paath-55.txt",
+          "lessonNumber": 55,
+          "headerLine": "पाठ छप्पनवां",
+          "sourceLineStart": 13532,
+          "lineCount": 131
+        },
+        {
+          "file": "paath-56.txt",
+          "lessonNumber": 56,
+          "headerLine": "पाठ सत्तावनवां",
+          "sourceLineStart": 13663,
+          "lineCount": 115
+        },
+        {
+          "file": "paath-57.txt",
+          "lessonNumber": 57,
+          "headerLine": "पाठ अट्टावनवां",
+          "sourceLineStart": 13778,
+          "lineCount": 94
+        },
+        {
+          "file": "paath-58.txt",
+          "lessonNumber": 58,
+          "headerLine": "पाठ उनसठवा",
+          "sourceLineStart": 13872,
+          "lineCount": 102
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+
+# Large OCR files from content pipeline (download with npm run pipeline:download)
+content-source/raw/*.html
+content-source/raw/*.xml
