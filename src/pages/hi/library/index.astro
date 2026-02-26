@@ -1,12 +1,20 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import TextCard from '../../../components/astro/TextCard.astro';
+import LibraryFilter from '../../../components/islands/library/LibraryFilter.tsx';
 import { getCollection } from 'astro:content';
+import { CATEGORY_LABELS, DIFFICULTY_LABELS } from '../../../lib/labels';
 
 const readings = await getCollection('readings');
 const sorted = readings.sort((a, b) => a.data.sort_order - b.data.sort_order);
+const readingsData = sorted.map((r) => ({
+  id: r.id,
+  title_hi: r.data.title_hi,
+  category: r.data.category,
+  difficulty: r.data.difficulty,
+  sanskrit_text: r.data.sanskrit_text,
+}));
 ---
-<BaseLayout title="पुस्तकालय">
+<BaseLayout title="संस्कृत पुस्तकालय — सुभाषित, कथाएँ, श्लोक" description="संस्कृत साहित्य संग्रह — सुभाषित, हितोपदेश, पञ्चतन्त्र, भगवद्गीता श्लोक। पदच्छेद, शब्दार्थ और अनुवाद सहित।">
   <div class="max-w-4xl mx-auto px-4 py-8">
     <h1 class="text-3xl font-bold text-stone-900 dark:text-stone-100 mb-2">
       पुस्तकालय
@@ -16,11 +24,12 @@ const sorted = readings.sort((a, b) => a.data.sort_order - b.data.sort_order);
     </p>
 
     {sorted.length > 0 ? (
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {sorted.map((reading) => (
-          <TextCard reading={reading} />
-        ))}
-      </div>
+      <LibraryFilter
+        readings={readingsData}
+        categoryLabels={CATEGORY_LABELS}
+        difficultyLabels={DIFFICULTY_LABELS}
+        client:visible
+      />
     ) : (
       <p class="text-center text-stone-500 dark:text-stone-400 py-12">
         पाठ्य सामग्री शीघ्र उपलब्ध होगी।

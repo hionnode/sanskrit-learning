@@ -29,7 +29,7 @@ export default {
         'border-subtle': '#e8e1df',
         // Text
         ink: '#1b100e',
-        clay: '#955c50',
+        clay: '#7a4a3f',
         // Accents
         gold: {
           DEFAULT: '#c8a165',
@@ -40,6 +40,7 @@ export default {
         charcoal: {
           600: '#57534E',
           700: '#44403C',
+          750: '#362f2b',
           800: '#292524',
           900: '#211411',
         },
@@ -47,9 +48,9 @@ export default {
         cream: '#fbf9f8',
       },
       fontFamily: {
-        sans: ['Manrope', 'system-ui', 'sans-serif'],
-        serif: ['Tiro Devanagari Sanskrit', 'Noto Serif', 'serif'],
-        devanagari: ['Tiro Devanagari Sanskrit', 'Noto Serif', 'serif'],
+        sans: ['Manrope', 'Noto Sans Devanagari', 'system-ui', 'sans-serif'],
+        serif: ['Tiro Devanagari Sanskrit', 'Noto Sans Devanagari', 'Noto Serif', 'serif'],
+        devanagari: ['Tiro Devanagari Sanskrit', 'Noto Sans Devanagari', 'Noto Serif', 'serif'],
       },
       fontSize: {
         'body': ['1.125rem', { lineHeight: '1.5' }],
