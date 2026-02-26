@@ -21,7 +21,7 @@ const STAGE_META: Record<string, { title_hi: string; title_en: string; descripti
   foundation: {
     title_hi: 'आधार',
     title_en: 'Foundation',
-    description_hi: 'वर्णमाला, शब्द रूप, धातु रूप, सन्धि — संस्कृत की नींव',
+    description_hi: 'धातु रूप, वाक्य रचना, शब्द रूप, सर्वनाम, सन्धि — संस्कृत की नींव',
   },
   intermediate: {
     title_hi: 'मध्यम',
