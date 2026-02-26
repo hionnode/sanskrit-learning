@@ -1,0 +1,41 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('advanced');
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<BaseLayout title={entry.data.title_hi}>
+  <div class="max-w-2xl mx-auto px-4 py-8">
+    <header class="mb-8">
+      <h1 class="text-2xl md:text-3xl font-bold text-ink dark:text-stone-100">
+        {entry.data.title_hi}
+      </h1>
+      <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">
+        {entry.data.title_en}
+      </p>
+    </header>
+
+    <div class="prose prose-stone dark:prose-invert max-w-none">
+      <Content />
+    </div>
+
+    <div class="mt-8 pt-6 border-t border-border-subtle dark:border-charcoal-700">
+      <a
+        href="/hi/advanced"
+        class="inline-flex items-center gap-2 text-sm text-vermillion dark:text-vermillion-light hover:text-vermillion-dark transition-colors min-h-[44px]"
+      >
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+        उन्नत अनुभाग पर वापस
+      </a>
+    </div>
+  </div>
+</BaseLayout>

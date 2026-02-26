@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('advanced');
+const sorted = entries.sort((a, b) => a.data.sort_order - b.data.sort_order);
+---
+<BaseLayout title="उन्नत संस्कृत — माहेश्वर सूत्र, प्रत्याहार, अष्टाध्यायी" description="संस्कृत व्याकरण के उन्नत विषय — माहेश्वर सूत्र, प्रत्याहार पद्धति, अष्टाध्यायी परिचय और संसाधन।">
+  <div class="max-w-3xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-stone-900 dark:text-stone-100 mb-2">
+      उन्नत
+    </h1>
+    <p class="text-stone-500 dark:text-stone-400 mb-8">
+      माहेश्वर सूत्र, प्रत्याहार, अष्टाध्यायी — संस्कृत व्याकरण की गहराई
+    </p>
+
+    {sorted.length > 0 ? (
+      <div class="space-y-4">
+        {sorted.map((entry) => (
+          <a
+            href={`/hi/advanced/${entry.id}`}
+            class="block bg-white dark:bg-charcoal-800 rounded-xl p-6 border border-border-subtle dark:border-charcoal-700 hover:border-vermillion dark:hover:border-vermillion hover:shadow-card-hover shadow-card transition-all"
+          >
+            <h2 class="font-bold text-ink dark:text-stone-100 mb-1">
+              {entry.data.title_hi}
+            </h2>
+            <p class="text-sm text-stone-500 dark:text-stone-400">
+              {entry.data.title_en}
+            </p>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <p class="text-center text-stone-500 dark:text-stone-400 py-12">
+        सामग्री शीघ्र उपलब्ध होगी।
+      </p>
+    )}
+  </div>
+</BaseLayout>
