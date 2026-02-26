@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import TextCard from '../../../components/astro/TextCard.astro';
+import { getCollection } from 'astro:content';
+
+const readings = await getCollection('readings');
+const sorted = readings.sort((a, b) => a.data.sort_order - b.data.sort_order);
+---
+<BaseLayout title="पुस्तकालय">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-stone-900 dark:text-stone-100 mb-2">
+      पुस्तकालय
+    </h1>
+    <p class="text-stone-500 dark:text-stone-400 mb-8">
+      संस्कृत साहित्य — सुभाषित, कथाएँ, श्लोक
+    </p>
+
+    {sorted.length > 0 ? (
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {sorted.map((reading) => (
+          <TextCard reading={reading} />
+        ))}
+      </div>
+    ) : (
+      <p class="text-center text-stone-500 dark:text-stone-400 py-12">
+        पाठ्य सामग्री शीघ्र उपलब्ध होगी।
+      </p>
+    )}
+  </div>
+</BaseLayout>

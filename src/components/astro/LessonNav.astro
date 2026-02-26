@@ -1,0 +1,30 @@
+---
+import type { Lesson } from '../../lib/content-helpers';
+
+interface Props {
+  prev: Lesson | null;
+  next: Lesson | null;
+}
+
+const { prev, next } = Astro.props;
+---
+<nav class="flex items-center justify-between mt-12 pt-6 border-t border-amber-200 dark:border-charcoal-700" aria-label="पाठ नेविगेशन">
+  {prev ? (
+    <a
+      href={`/hi/learn/${prev.id}`}
+      class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium text-stone-600 dark:text-stone-400 hover:bg-amber-50 dark:hover:bg-charcoal-800 transition-colors min-h-[44px]"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+      <span>{prev.data.title_hi}</span>
+    </a>
+  ) : <div />}
+  {next ? (
+    <a
+      href={`/hi/learn/${next.id}`}
+      class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium text-saffron-600 dark:text-saffron-500 hover:bg-amber-50 dark:hover:bg-charcoal-800 transition-colors min-h-[44px]"
+    >
+      <span>{next.data.title_hi}</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
+    </a>
+  ) : <div />}
+</nav>

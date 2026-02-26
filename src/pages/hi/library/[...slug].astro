@@ -1,0 +1,18 @@
+---
+import { getCollection, render } from 'astro:content';
+import ReaderLayout from '../../../layouts/ReaderLayout.astro';
+
+export async function getStaticPaths() {
+  const readings = await getCollection('readings');
+  return readings.map((reading) => ({
+    params: { slug: reading.id },
+    props: { reading },
+  }));
+}
+
+const { reading } = Astro.props;
+const { Content } = await render(reading);
+---
+<ReaderLayout reading={reading}>
+  <Content />
+</ReaderLayout>

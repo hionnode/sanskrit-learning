@@ -1,0 +1,19 @@
+---
+import DarkModeToggle from '../islands/common/DarkModeToggle.tsx';
+---
+<nav class="sticky top-0 z-50 bg-cream/95 dark:bg-charcoal-900/95 backdrop-blur border-b border-amber-200 dark:border-charcoal-700">
+  <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+    <a href="/hi/learn" class="flex items-center gap-2 text-lg font-bold text-saffron-600 dark:text-saffron-500 hover:text-saffron-700 dark:hover:text-saffron-500 transition-colors">
+      <span lang="sa">संस्कृत शिक्षा</span>
+    </a>
+    <div class="flex items-center gap-6">
+      <a href="/hi/learn" class="text-sm font-medium text-stone-700 dark:text-stone-300 hover:text-saffron-600 dark:hover:text-saffron-500 transition-colors">
+        सीखें
+      </a>
+      <a href="/hi/library" class="text-sm font-medium text-stone-700 dark:text-stone-300 hover:text-saffron-600 dark:hover:text-saffron-500 transition-colors">
+        पुस्तकालय
+      </a>
+      <DarkModeToggle client:load />
+    </div>
+  </div>
+</nav>

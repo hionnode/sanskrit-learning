@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import StageCard from '../../../components/astro/StageCard.astro';
+import ModuleAccordion from '../../../components/astro/ModuleAccordion.astro';
+import { getStagesWithModules } from '../../../lib/content-helpers';
+
+const stages = await getStagesWithModules();
+const stageNumbers: Record<string, number> = { foundation: 1, intermediate: 2 };
+---
+<BaseLayout title="सीखें">
+  <div class="max-w-3xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-stone-900 dark:text-stone-100 mb-2">
+      संस्कृत सीखें
+    </h1>
+    <p class="text-stone-500 dark:text-stone-400 mb-8">
+      शून्य से शास्त्र तक — चरणबद्ध शिक्षण मार्ग
+    </p>
+
+    {stages.map((stage) => (
+      <StageCard
+        number={stageNumbers[stage.id]}
+        title={stage.title_hi}
+        description={stage.description_hi}
+      >
+        {stage.modules.map((mod) => (
+          <ModuleAccordion title={mod.title_hi} lessons={mod.lessons} />
+        ))}
+      </StageCard>
+    ))}
+
+    {stages.length === 0 && (
+      <p class="text-center text-stone-500 dark:text-stone-400 py-12">
+        पाठ शीघ्र उपलब्ध होंगे।
+      </p>
+    )}
+  </div>
+</BaseLayout>
