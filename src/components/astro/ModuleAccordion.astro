@@ -27,14 +27,14 @@ const { title, lessons } = Astro.props;
     </svg>
   </summary>
   <ul class="mt-2 ml-4 space-y-1">
-    {lessons.map((lesson) => (
+    {lessons.map((lesson, i) => (
       <li>
         <a
           href={`/hi/learn/${lesson.id}`}
           class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-stone-600 dark:text-stone-400 hover:bg-surface-bark/50 dark:hover:bg-charcoal-800 hover:text-vermillion dark:hover:text-vermillion-light transition-colors min-h-[44px]"
         >
           <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-surface-bark dark:bg-charcoal-700 text-xs font-medium text-vermillion dark:text-vermillion-light">
-            {lesson.data.sort_order}
+            {i + 1}
           </span>
           <span>{lesson.data.title_hi}</span>
           <span class="ml-auto text-xs text-stone-400">{lesson.data.estimated_minutes} मि.</span>
