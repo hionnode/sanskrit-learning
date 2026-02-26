@@ -26,12 +26,12 @@ export default function MCQ({ question, options, correctId, explanation, onAnswe
 
   return (
     <div class="space-y-4">
-      <p class="text-lg font-medium text-stone-800 dark:text-stone-200 leading-relaxed font-devanagari">
+      <p class="text-xl font-medium text-ink dark:text-stone-200 leading-relaxed font-serif" id="mcq-question">
         {question}
       </p>
-      <div class="grid gap-3">
+      <div class="grid gap-3" role="radiogroup" aria-labelledby="mcq-question">
         {options.map((opt) => {
-          let style = 'border-amber-200 dark:border-charcoal-700 hover:border-saffron-500 dark:hover:border-saffron-500 bg-white dark:bg-charcoal-800';
+          let style = 'border-border-subtle dark:border-charcoal-700 hover:border-vermillion dark:hover:border-vermillion bg-white dark:bg-charcoal-800';
 
           if (answered) {
             if (opt.id === correctId) {
@@ -48,9 +48,11 @@ export default function MCQ({ question, options, correctId, explanation, onAnswe
               key={opt.id}
               onClick={() => handleSelect(opt.id)}
               disabled={answered}
-              class={`w-full text-left px-4 py-3 rounded-lg border-2 transition-all min-h-[44px] font-devanagari text-stone-700 dark:text-stone-300 ${style} ${!answered ? 'cursor-pointer active:scale-[0.98]' : 'cursor-default'}`}
+              role="radio"
+              aria-checked={selected === opt.id}
+              class={`w-full text-left px-4 py-3 rounded-lg border-2 transition-all min-h-[44px] font-serif text-lg text-stone-700 dark:text-stone-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vermillion ${style} ${!answered ? 'cursor-pointer active:scale-[0.98]' : 'cursor-default'}`}
             >
-              <span class="font-medium text-saffron-600 dark:text-saffron-500 mr-2">
+              <span class="font-medium text-vermillion dark:text-vermillion-light mr-2">
                 {opt.id.toUpperCase()}.
               </span>
               {opt.text}
@@ -59,12 +61,14 @@ export default function MCQ({ question, options, correctId, explanation, onAnswe
         })}
       </div>
 
-      {answered && explanation && (
-        <div class={`p-4 rounded-lg text-sm leading-relaxed font-devanagari ${isCorrect ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-300' : 'bg-amber-50 dark:bg-amber-900/20 text-amber-800 dark:text-amber-300'}`}>
-          <span class="font-bold">{isCorrect ? 'सही!' : 'गलत।'}</span>{' '}
-          {explanation}
-        </div>
-      )}
+      <div aria-live="polite">
+        {answered && explanation && (
+          <div class={`p-4 rounded-lg text-sm leading-relaxed font-serif ${isCorrect ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-300' : 'bg-surface-palm dark:bg-amber-900/20 text-amber-800 dark:text-amber-300'}`}>
+            <span class="font-bold">{isCorrect ? 'सही!' : 'गलत।'}</span>{' '}
+            {explanation}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

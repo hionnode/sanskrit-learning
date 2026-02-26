@@ -3,37 +3,81 @@ export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkMode: 'class',
   theme: {
+    borderRadius: {
+      none: '0',
+      sm: '0.0625rem',
+      DEFAULT: '0.125rem',
+      md: '0.25rem',
+      lg: '0.5rem',
+      xl: '0.75rem',
+      '2xl': '1rem',
+      full: '9999px',
+    },
     extend: {
       colors: {
-        cream: '#FFFBEB',
-        saffron: {
-          500: '#F59E0B',
-          600: '#D97706',
-          700: '#B45309',
+        // Primary
+        vermillion: {
+          DEFAULT: '#d53e20',
+          dark: '#b02e15',
+          light: '#e8634a',
         },
+        // Surfaces
+        paper: '#fbf9f8',
+        'surface-palm': '#fdf6e3',
+        'surface-bark': '#eaddd7',
+        // Borders
+        'border-subtle': '#e8e1df',
+        // Text
+        ink: '#1b100e',
+        clay: '#955c50',
+        // Accents
+        gold: {
+          DEFAULT: '#c8a165',
+          bright: '#d4af37',
+        },
+        turmeric: '#f59e0b',
+        // Dark mode
         charcoal: {
-          900: '#1C1917',
-          800: '#292524',
+          600: '#57534E',
           700: '#44403C',
+          800: '#292524',
+          900: '#211411',
         },
+        // Legacy compat (used in some component classes)
+        cream: '#fbf9f8',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        devanagari: ['Noto Sans Devanagari', 'sans-serif'],
+        sans: ['Manrope', 'system-ui', 'sans-serif'],
+        serif: ['Tiro Devanagari Sanskrit', 'Noto Serif', 'serif'],
+        devanagari: ['Tiro Devanagari Sanskrit', 'Noto Serif', 'serif'],
       },
       fontSize: {
-        'sanskrit': ['1.375rem', { lineHeight: '2.0' }],
+        'body': ['1.125rem', { lineHeight: '1.5' }],
+        'sanskrit': ['1.25rem', { lineHeight: '2.0' }],
         'sanskrit-lg': ['1.5rem', { lineHeight: '2.0' }],
+        'sanskrit-display': ['3rem', { lineHeight: '1.6' }],
+        'caption': ['0.9375rem', { lineHeight: '1.8' }],
+        'display': ['2.625rem', { lineHeight: '1.2' }],
+        'section': ['2rem', { lineHeight: '1.2' }],
       },
       lineHeight: {
-        'devanagari': '1.9',
+        'devanagari': '2.0',
+      },
+      boxShadow: {
+        'card': '0 2px 10px -1px rgba(88, 56, 45, 0.1)',
+        'card-hover': '0 10px 25px -5px rgba(88, 56, 45, 0.2)',
+        'page': '0 4px 20px -2px rgba(88, 56, 45, 0.15)',
+      },
+      backgroundImage: {
+        'vermillion-gradient': 'linear-gradient(135deg, #d53e20 0%, #a02e16 100%)',
+        'gradient-palmleaf': 'linear-gradient(180deg, rgba(244,239,234,0.4) 0%, rgba(227,216,203,0.4) 100%)',
       },
       typography: ({ theme }) => ({
         DEFAULT: {
           css: {
-            '--tw-prose-body': theme('colors.stone.800'),
-            '--tw-prose-headings': theme('colors.stone.900'),
-            lineHeight: '1.9',
+            '--tw-prose-body': '#1b100e',
+            '--tw-prose-headings': '#1b100e',
+            lineHeight: '1.8',
           },
         },
         invert: {

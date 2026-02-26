@@ -9,9 +9,10 @@ interface Props {
 const { title, lessons } = Astro.props;
 ---
 <details class="group" open>
-  <summary class="flex items-center justify-between cursor-pointer py-2 px-3 rounded-lg hover:bg-amber-50 dark:hover:bg-charcoal-800 transition-colors min-h-[44px]">
-    <span class="font-medium text-stone-800 dark:text-stone-200">{title}</span>
+  <summary class="flex items-center justify-between cursor-pointer py-2 px-3 rounded-lg hover:bg-surface-bark/50 dark:hover:bg-charcoal-800 transition-colors min-h-[44px]">
+    <span class="font-medium text-ink dark:text-stone-200">{title}</span>
     <svg
+      aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       width="16" height="16"
       viewBox="0 0 24 24"
@@ -30,9 +31,9 @@ const { title, lessons } = Astro.props;
       <li>
         <a
           href={`/hi/learn/${lesson.id}`}
-          class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-stone-600 dark:text-stone-400 hover:bg-amber-50 dark:hover:bg-charcoal-800 hover:text-saffron-600 dark:hover:text-saffron-500 transition-colors min-h-[44px]"
+          class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-stone-600 dark:text-stone-400 hover:bg-surface-bark/50 dark:hover:bg-charcoal-800 hover:text-vermillion dark:hover:text-vermillion-light transition-colors min-h-[44px]"
         >
-          <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-amber-100 dark:bg-charcoal-700 text-xs font-medium text-saffron-600 dark:text-saffron-500">
+          <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-surface-bark dark:bg-charcoal-700 text-xs font-medium text-vermillion dark:text-vermillion-light">
             {lesson.data.sort_order}
           </span>
           <span>{lesson.data.title_hi}</span>

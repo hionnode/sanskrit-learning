@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="पृष्ठ नहीं मिला — 404">
+  <div class="max-w-xl mx-auto px-4 py-20 text-center">
+    <p class="text-6xl font-bold text-vermillion mb-4">404</p>
+    <h1 class="text-2xl font-bold text-ink dark:text-stone-100 mb-2">पृष्ठ नहीं मिला</h1>
+    <p class="text-clay dark:text-stone-400 mb-8">यह पृष्ठ उपलब्ध नहीं है। कृपया नीचे दिए गए लिंक से आगे बढ़ें।</p>
+    <div class="flex justify-center gap-4">
+      <a
+        href="/hi/learn"
+        class="px-6 py-3 bg-vermillion hover:bg-vermillion-dark text-white rounded-lg font-medium transition-colors min-h-[44px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vermillion"
+      >
+        सीखें
+      </a>
+      <a
+        href="/hi/library"
+        class="px-6 py-3 border border-border-subtle dark:border-charcoal-700 hover:border-vermillion text-stone-700 dark:text-stone-300 rounded-lg font-medium transition-colors min-h-[44px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vermillion"
+      >
+        पुस्तकालय
+      </a>
+    </div>
+  </div>
+</BaseLayout>

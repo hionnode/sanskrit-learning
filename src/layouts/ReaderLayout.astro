@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import TextLayerToggles from '../components/islands/reading/TextLayerToggles.tsx';
 import type { CollectionEntry } from 'astro:content';
+import { CATEGORY_LABELS, DIFFICULTY_LABELS } from '../lib/labels';
 
 interface Props {
   reading: CollectionEntry<'readings'>;
@@ -9,33 +10,19 @@ interface Props {
 
 const { reading } = Astro.props;
 const data = reading.data;
-
-const CATEGORY_LABELS: Record<string, string> = {
-  subhashita: 'सुभाषित',
-  hitopadesha: 'हितोपदेश',
-  panchatantra: 'पञ्चतन्त्र',
-  gita: 'भगवद्गीता',
-  stotra: 'स्तोत्र',
-};
-
-const DIFFICULTY_LABELS: Record<string, string> = {
-  beginner: 'सरल',
-  intermediate: 'मध्यम',
-  advanced: 'कठिन',
-};
 ---
 <BaseLayout title={data.title_hi}>
   <div class="max-w-2xl mx-auto px-4 py-8">
     <header class="mb-8">
       <div class="flex items-center gap-2 mb-2">
-        <span class="text-xs font-medium px-2 py-1 rounded-full bg-saffron-500/10 text-saffron-700 dark:text-saffron-500">
+        <span class="text-xs font-medium px-2 py-1 rounded-full bg-vermillion/10 text-vermillion dark:text-vermillion-light">
           {CATEGORY_LABELS[data.category] || data.category}
         </span>
         <span class="text-xs font-medium px-2 py-1 rounded-full bg-stone-100 dark:bg-charcoal-700 text-stone-600 dark:text-stone-400">
           {DIFFICULTY_LABELS[data.difficulty] || data.difficulty}
         </span>
       </div>
-      <h1 class="text-2xl md:text-3xl font-bold text-stone-900 dark:text-stone-100">
+      <h1 class="text-2xl md:text-3xl font-bold text-ink dark:text-stone-100">
         {data.title_hi}
       </h1>
     </header>
@@ -53,12 +40,12 @@ const DIFFICULTY_LABELS: Record<string, string> = {
       <slot />
     </div>
 
-    <div class="mt-8 pt-6 border-t border-amber-200 dark:border-charcoal-700">
+    <div class="mt-8 pt-6 border-t border-border-subtle dark:border-charcoal-700">
       <a
         href="/hi/library"
-        class="inline-flex items-center gap-2 text-sm text-saffron-600 dark:text-saffron-500 hover:text-saffron-700 transition-colors min-h-[44px]"
+        class="inline-flex items-center gap-2 text-sm text-vermillion dark:text-vermillion-light hover:text-vermillion-dark transition-colors min-h-[44px]"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
         पुस्तकालय पर वापस
       </a>
     </div>

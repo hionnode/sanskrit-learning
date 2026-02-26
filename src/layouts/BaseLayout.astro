@@ -9,25 +9,58 @@ interface Props {
 }
 
 const { title, description = 'संस्कृत सीखें — शून्य से शास्त्र तक। निःशुल्क, मुक्त-स्रोत संस्कृत शिक्षण मंच।' } = Astro.props;
+const locale = Astro.currentLocale ?? 'hi';
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = `${title} | संस्कृत शिक्षा`;
 ---
-<html lang="hi" class="scroll-smooth">
+<html lang={locale} class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <title>{title} | संस्कृत शिक्षा</title>
-    <link rel="preload" href="/fonts/NotoSansDevanagari-Regular.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <title>{fullTitle}</title>
+
+    <!-- Canonical & Favicon -->
+    <link rel="canonical" href={canonicalUrl.href} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl.href} />
+    <meta property="og:locale" content={locale === 'hi' ? 'hi_IN' : 'en_IN'} />
+    <meta property="og:site_name" content="संस्कृत शिक्षा" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#fbf9f8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#211411" media="(prefers-color-scheme: dark)" />
+
+    <!-- Fonts -->
+    <link rel="preload" href="/fonts/TiroDevanagariSanskrit-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin />
+
     <!-- Dark mode: prevent flash -->
     <script is:inline>
-      if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-      }
+      try {
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch(e) {}
     </script>
   </head>
-  <body class="min-h-screen flex flex-col font-devanagari">
+  <body class="min-h-screen flex flex-col font-sans">
+    <!-- Skip to content -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-vermillion focus:text-white focus:rounded-md focus:text-sm focus:font-medium">
+      मुख्य सामग्री पर जाएँ
+    </a>
     <Navbar />
-    <main class="flex-1">
+    <main id="main-content" class="flex-1">
       <slot />
     </main>
     <Footer />

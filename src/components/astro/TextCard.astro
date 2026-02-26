@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { CATEGORY_LABELS, DIFFICULTY_LABELS } from '../../lib/labels';
 
 interface Props {
   reading: CollectionEntry<'readings'>;
@@ -7,37 +8,23 @@ interface Props {
 
 const { reading } = Astro.props;
 const data = reading.data;
-
-const CATEGORY_LABELS: Record<string, string> = {
-  subhashita: 'सुभाषित',
-  hitopadesha: 'हितोपदेश',
-  panchatantra: 'पञ्चतन्त्र',
-  gita: 'भगवद्गीता',
-  stotra: 'स्तोत्र',
-};
-
-const DIFFICULTY_LABELS: Record<string, string> = {
-  beginner: 'सरल',
-  intermediate: 'मध्यम',
-  advanced: 'कठिन',
-};
 ---
 <a
   href={`/hi/library/${reading.id}`}
-  class="block p-5 rounded-xl border border-amber-200 dark:border-charcoal-700 bg-white dark:bg-charcoal-800 hover:border-saffron-500 dark:hover:border-saffron-500 hover:shadow-md transition-all group"
+  class="block p-5 rounded-xl border border-border-subtle dark:border-charcoal-700 bg-white dark:bg-charcoal-800 hover:border-vermillion dark:hover:border-vermillion hover:shadow-card-hover transition-all shadow-card group"
 >
   <div class="flex items-center gap-2 mb-3">
-    <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-saffron-500/10 text-saffron-700 dark:text-saffron-500">
+    <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-vermillion/10 text-vermillion dark:text-vermillion-light">
       {CATEGORY_LABELS[data.category] || data.category}
     </span>
-    <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-stone-100 dark:bg-charcoal-700 text-stone-500 dark:text-stone-400">
+    <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-stone-100 dark:bg-charcoal-700 text-clay dark:text-stone-400">
       {DIFFICULTY_LABELS[data.difficulty] || data.difficulty}
     </span>
   </div>
-  <h3 class="font-bold text-stone-900 dark:text-stone-100 group-hover:text-saffron-600 dark:group-hover:text-saffron-500 transition-colors mb-2">
+  <h3 class="font-bold text-ink dark:text-stone-100 group-hover:text-vermillion dark:group-hover:text-vermillion-light transition-colors mb-2">
     {data.title_hi}
   </h3>
-  <p class="text-sm text-stone-500 dark:text-stone-400 font-devanagari leading-relaxed line-clamp-2" lang="sa">
+  <p class="text-base text-clay dark:text-stone-400 font-serif leading-relaxed line-clamp-2" lang="sa">
     {data.sanskrit_text.split('\n')[0]}
   </p>
 </a>
