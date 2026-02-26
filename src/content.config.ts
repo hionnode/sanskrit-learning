@@ -14,16 +14,27 @@ const lessons = defineCollection({
     estimated_minutes: z.number().default(15),
     prerequisites: z.array(z.string()).optional(),
     exercises: z.array(
-      z.object({
-        type: z.literal('mcq'),
-        question_hi: z.string(),
-        options: z.array(z.object({
-          id: z.string(),
-          text: z.string(),
-        })),
-        correct: z.string(),
-        explanation_hi: z.string().optional(),
-      })
+      z.discriminatedUnion('type', [
+        z.object({
+          type: z.literal('mcq'),
+          question_hi: z.string(),
+          options: z.array(z.object({
+            id: z.string(),
+            text: z.string(),
+          })),
+          correct: z.string(),
+          explanation_hi: z.string().optional(),
+        }),
+        z.object({
+          type: z.literal('drag-match'),
+          instruction_hi: z.string(),
+          pairs: z.array(z.object({
+            left: z.string(),
+            right: z.string(),
+          })),
+          explanation_hi: z.string().optional(),
+        }),
+      ])
     ).default([]),
   }),
 });
@@ -41,9 +52,11 @@ const readings = defineCollection({
     word_meanings: z.array(z.object({
       word: z.string(),
       meaning_hi: z.string(),
+      meaning_en: z.string().optional(),
     })).default([]),
     anvaya: z.string().optional(),
     translation_hi: z.string(),
+    translation_en: z.string().optional(),
   }),
 });
 

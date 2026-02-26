@@ -1,7 +1,8 @@
 import { useState } from 'preact/hooks';
 import MCQ from './MCQ';
+import DragMatch from './DragMatch';
 
-interface Exercise {
+interface MCQExercise {
   type: 'mcq';
   question_hi: string;
   options: { id: string; text: string }[];
@@ -9,11 +10,22 @@ interface Exercise {
   explanation_hi?: string;
 }
 
-interface Props {
-  exercises: Exercise[];
+interface DragMatchExercise {
+  type: 'drag-match';
+  instruction_hi: string;
+  pairs: { left: string; right: string }[];
+  explanation_hi?: string;
 }
 
-export default function ExerciseSet({ exercises }: Props) {
+type Exercise = MCQExercise | DragMatchExercise;
+
+interface Props {
+  exercises: Exercise[];
+  nextLessonUrl?: string;
+  nextLessonTitle?: string;
+}
+
+export default function ExerciseSet({ exercises, nextLessonUrl, nextLessonTitle }: Props) {
   const [current, setCurrent] = useState(0);
   const [score, setScore] = useState(0);
   const [answered, setAnswered] = useState(false);
@@ -56,12 +68,23 @@ export default function ExerciseSet({ exercises }: Props) {
            percentage >= 50 ? 'अच्छा प्रयास! थोड़ा और अभ्यास करें।' :
            'पाठ दोबारा पढ़ें और पुनः प्रयास करें।'}
         </p>
-        <button
-          onClick={handleRestart}
-          class="px-6 py-3 bg-vermillion hover:bg-vermillion-dark text-white rounded-lg font-medium transition-colors min-h-[44px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vermillion"
-        >
-          पुनः प्रयास करें
-        </button>
+        <div class="flex items-center justify-center gap-4 flex-wrap">
+          <button
+            onClick={handleRestart}
+            class="px-6 py-3 border-2 border-vermillion text-vermillion dark:text-vermillion-light hover:bg-vermillion/10 rounded-lg font-medium transition-colors min-h-[44px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vermillion"
+          >
+            पुनः प्रयास करें
+          </button>
+          {nextLessonUrl && (
+            <a
+              href={nextLessonUrl}
+              class="inline-flex items-center gap-2 px-6 py-3 bg-vermillion hover:bg-vermillion-dark text-white rounded-lg font-medium transition-colors min-h-[44px]"
+            >
+              {nextLessonTitle || 'अगला पाठ'}
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
+            </a>
+          )}
+        </div>
       </div>
     );
   }
@@ -89,14 +112,24 @@ export default function ExerciseSet({ exercises }: Props) {
         />
       </div>
 
-      <MCQ
-        key={current}
-        question={exercise.question_hi}
-        options={exercise.options}
-        correctId={exercise.correct}
-        explanation={exercise.explanation_hi}
-        onAnswer={handleAnswer}
-      />
+      {exercise.type === 'mcq' ? (
+        <MCQ
+          key={current}
+          question={exercise.question_hi}
+          options={exercise.options}
+          correctId={exercise.correct}
+          explanation={exercise.explanation_hi}
+          onAnswer={handleAnswer}
+        />
+      ) : exercise.type === 'drag-match' ? (
+        <DragMatch
+          key={current}
+          instruction={exercise.instruction_hi}
+          pairs={exercise.pairs}
+          explanation={exercise.explanation_hi}
+          onAnswer={handleAnswer}
+        />
+      ) : null}
 
       {answered && (
         <div class="flex justify-end">

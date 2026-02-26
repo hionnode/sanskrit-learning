@@ -13,8 +13,26 @@ const { lesson } = Astro.props;
 const { prev, next } = await getPrevNextLesson(lesson.id);
 const modules = await getModulesForStage(lesson.data.stage);
 const exercises = lesson.data.exercises;
+
+const lessonJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LearningResource',
+  name: lesson.data.title_hi,
+  description: `${lesson.data.title_hi} — ${lesson.data.module_title_hi}`,
+  inLanguage: ['sa', 'hi'],
+  educationalLevel: lesson.data.stage === 'foundation' ? 'Beginner' : 'Intermediate',
+  timeRequired: `PT${lesson.data.estimated_minutes}M`,
+  isPartOf: {
+    '@type': 'Course',
+    name: 'संस्कृत शिक्षा — Sanskrit Shiksha',
+    provider: { '@type': 'Organization', name: 'Sanskrit Shiksha' },
+  },
+};
 ---
 <BaseLayout title={lesson.data.title_hi} description={`${lesson.data.title_hi} — ${lesson.data.module_title_hi} | संस्कृत शिक्षा`}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(lessonJsonLd)} />
+  </Fragment>
   <div class="max-w-5xl mx-auto px-4 py-8">
     <!-- Breadcrumb (visible on all screens) -->
     <nav aria-label="ब्रेडक्रम्ब" class="mb-6 text-sm text-clay dark:text-stone-400">
@@ -114,7 +132,12 @@ const exercises = lesson.data.exercises;
         {exercises.length > 0 && (
           <section class="mt-12 pt-8 border-t border-border-subtle dark:border-charcoal-700">
             <h2 class="text-xl font-bold text-ink dark:text-stone-100 mb-6">अभ्यास</h2>
-            <ExerciseSet exercises={exercises} client:visible />
+            <ExerciseSet
+              exercises={exercises}
+              nextLessonUrl={next ? `/hi/learn/${next.id}` : undefined}
+              nextLessonTitle={next?.data.title_hi}
+              client:visible
+            />
           </section>
         )}
 

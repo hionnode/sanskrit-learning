@@ -50,7 +50,7 @@ export default function MCQ({ question, options, correctId, explanation, onAnswe
               disabled={answered}
               role="radio"
               aria-checked={selected === opt.id}
-              class={`w-full text-left px-4 py-3 rounded-lg border-2 transition-all min-h-[44px] font-serif text-lg text-stone-700 dark:text-stone-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vermillion ${style} ${!answered ? 'cursor-pointer active:scale-[0.98]' : 'cursor-default'}`}
+              class={`w-full text-left px-4 py-3 rounded-lg border-2 transition-all min-h-[44px] font-serif text-lg text-stone-700 dark:text-stone-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vermillion ${style} ${!answered ? 'cursor-pointer active:scale-[0.98]' : 'cursor-not-allowed'}`}
             >
               <span class="font-medium text-vermillion dark:text-vermillion-light mr-2">
                 {opt.id.toUpperCase()}.
@@ -63,7 +63,7 @@ export default function MCQ({ question, options, correctId, explanation, onAnswe
 
       <div aria-live="polite">
         {answered && explanation && (
-          <div class={`p-4 rounded-lg text-sm leading-relaxed font-serif ${isCorrect ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-300' : 'bg-surface-palm dark:bg-amber-900/20 text-amber-800 dark:text-amber-300'}`}>
+          <div class={`p-4 rounded-lg text-sm leading-relaxed font-serif ${isCorrect ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-300' : 'bg-surface-palm dark:bg-charcoal-750 text-clay dark:text-stone-300'}`}>
             <span class="font-bold">{isCorrect ? 'सही!' : 'गलत।'}</span>{' '}
             {explanation}
           </div>

@@ -12,6 +12,26 @@ const { title, description = 'संस्कृत सीखें — शू�
 const locale = Astro.currentLocale ?? 'hi';
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 const fullTitle = `${title} | संस्कृत शिक्षा`;
+
+// Hreflang alternate URLs
+const altLocale = locale === 'hi' ? 'en' : 'hi';
+const currentPath = Astro.url.pathname;
+const altPath = currentPath.replace(`/${locale}/`, `/${altLocale}/`);
+const altUrl = new URL(altPath, Astro.site);
+
+// JSON-LD structured data
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'संस्कृत शिक्षा — Sanskrit Shiksha',
+  url: Astro.site?.href,
+  description: 'Free, open-source Sanskrit learning platform based on Satavalekar\'s Sanskrit Swayam Shikshak.',
+  inLanguage: ['sa', 'hi', 'en'],
+  publisher: {
+    '@type': 'Organization',
+    name: 'Sanskrit Shiksha',
+  },
+};
 ---
 <html lang={locale} class="scroll-smooth">
   <head>
@@ -31,11 +51,23 @@ const fullTitle = `${title} | संस्कृत शिक्षा`;
     <meta property="og:url" content={canonicalUrl.href} />
     <meta property="og:locale" content={locale === 'hi' ? 'hi_IN' : 'en_IN'} />
     <meta property="og:site_name" content="संस्कृत शिक्षा" />
+    <meta property="og:image" content={new URL('/og-image.svg', Astro.site).href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL('/og-image.svg', Astro.site).href} />
+
+    <!-- Hreflang alternates -->
+    <link rel="alternate" hreflang={locale} href={canonicalUrl.href} />
+    <link rel="alternate" hreflang={altLocale} href={altUrl.href} />
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl.href} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#fbf9f8" media="(prefers-color-scheme: light)" />
@@ -44,6 +76,10 @@ const fullTitle = `${title} | संस्कृत शिक्षा`;
     <!-- Fonts -->
     <link rel="preload" href="/fonts/TiroDevanagariSanskrit-Regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/NotoSansDevanagari-Regular.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Additional head content from child layouts -->
+    <slot name="head" />
 
     <!-- Dark mode: prevent flash -->
     <script is:inline>
