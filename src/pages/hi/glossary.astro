@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { glossaryData, CATEGORY_LABELS_GLOSSARY } from '../../lib/glossary-data';
+
+const categories = ['vyakarana', 'vibhakti', 'dhatu', 'sandhi', 'samanya'] as const;
+const grouped = Object.fromEntries(
+  categories.map((cat) => [cat, glossaryData.filter((e) => e.category === cat)])
+);
+---
+<BaseLayout title="शब्दकोश — व्याकरण शब्दावली" description="संस्कृत व्याकरण की सम्पूर्ण शब्दावली — विभक्ति, कारक, धातु, सन्धि आदि शब्दों की परिभाषा।">
+  <div class="max-w-3xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-stone-900 dark:text-stone-100 mb-2">
+      शब्दकोश
+    </h1>
+    <p class="text-stone-500 dark:text-stone-400 mb-8">
+      संस्कृत व्याकरण में प्रयुक्त शब्दों की परिभाषा
+    </p>
+
+    {categories.map((cat) => (
+      <section class="mb-10">
+        <h2 class="text-xl font-bold text-vermillion dark:text-vermillion-light mb-4 border-b border-border-subtle dark:border-charcoal-700 pb-2">
+          {CATEGORY_LABELS_GLOSSARY[cat]}
+        </h2>
+        <dl class="space-y-4">
+          {grouped[cat].map((entry) => (
+            <div class="bg-paper dark:bg-charcoal-800 rounded-lg p-4 border border-border-subtle dark:border-charcoal-700">
+              <dt class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+                <span class="text-lg font-bold font-serif text-stone-900 dark:text-stone-100" lang="sa">{entry.term_sa}</span>
+                <span class="text-sm text-stone-500 dark:text-stone-400">{entry.term_hi}</span>
+                <span class="text-sm text-stone-400 dark:text-stone-500 italic">{entry.term_en}</span>
+              </dt>
+              <dd class="text-stone-700 dark:text-stone-300 text-sm leading-relaxed">
+                {entry.definition_hi}
+                {entry.lesson_slug && (
+                  <a
+                    href={`/hi/learn/${entry.lesson_slug}`}
+                    class="inline-block ml-2 text-xs text-vermillion dark:text-vermillion-light hover:underline"
+                  >
+                    पाठ देखें →
+                  </a>
+                )}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    ))}
+  </div>
+</BaseLayout>
