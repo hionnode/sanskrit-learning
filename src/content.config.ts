@@ -60,4 +60,14 @@ const readings = defineCollection({
   }),
 });
 
-export const collections = { lessons, readings };
+const advanced = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/advanced' }),
+  schema: z.object({
+    title_hi: z.string(),
+    title_en: z.string(),
+    sort_order: z.number(),
+    has_interactive: z.boolean().default(false),
+  }),
+});
+
+export const collections = { lessons, readings, advanced };
