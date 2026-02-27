@@ -113,7 +113,7 @@ export default function TypingTest({ locale: _locale }: Props) {
   useEffect(() => {
     if (phase === 'running') {
       timerRef.current = setInterval(() => {
-        setElapsed((prev) => {
+        setElapsed(() => {
           const now = (Date.now() - startTime) / 1000;
           return now;
         });
@@ -139,7 +139,6 @@ export default function TypingTest({ locale: _locale }: Props) {
     let tabPressed = false;
 
     function onKeyDown(e: KeyboardEvent) {
-      // Track pressed keys for keyboard highlighting
       setPressedKeys((prev) => {
         const next = new Set(prev);
         next.add(e.code);
@@ -149,7 +148,6 @@ export default function TypingTest({ locale: _locale }: Props) {
         setShiftHeld(true);
       }
 
-      // Tab+Enter restart
       if (e.key === 'Tab') {
         tabPressed = true;
       } else if (e.key === 'Enter' && tabPressed) {
@@ -393,9 +391,8 @@ export default function TypingTest({ locale: _locale }: Props) {
         chars: w.chars.map((c) => ({ ...c })),
       }));
 
-      let wi = wordIndex;
       let ci = charIndex;
-      const word = next[wi];
+      const word = next[wordIndex];
 
       if (ci > 0) {
         ci--;
@@ -425,14 +422,13 @@ export default function TypingTest({ locale: _locale }: Props) {
   const totalTyped = correctChars + incorrectChars + extraChars;
   const liveWpm = computeWpm(correctChars, elapsed);
   const liveAccuracy = computeAccuracy(correctChars, totalTyped);
-  const wordsCompleted = wordIndex;
 
   if (!prefsLoaded) {
     return <div class="h-64" />;
   }
 
   return (
-    <div class="space-y-4">
+    <div class="flex flex-col items-center w-full h-full min-h-0">
       {/* Hidden input for capturing keystrokes */}
       <input
         ref={inputRef}
@@ -461,7 +457,7 @@ export default function TypingTest({ locale: _locale }: Props) {
         />
       ) : (
         <>
-          {/* Mode bar / Stats bar — occupy same position */}
+          {/* Stats — visible during running */}
           {phase === 'running' ? (
             <StatsBar
               wpm={liveWpm}
@@ -469,9 +465,24 @@ export default function TypingTest({ locale: _locale }: Props) {
               elapsed={elapsed}
               mode={mode}
               modeValue={modeValue}
-              wordsCompleted={wordsCompleted}
+
             />
           ) : (
+            /* Empty spacer matching stats height during idle */
+            <div class="h-4 shrink-0" />
+          )}
+
+          {/* Word display — fills available space */}
+          <WordDisplay
+            words={words}
+            currentWordIndex={wordIndex}
+            currentCharIndex={charIndex}
+            focused={focused}
+            onFocusRequest={focusInput}
+          />
+
+          {/* Control panel — always visible */}
+          <div class="w-full flex flex-col items-center mt-auto mb-3 gap-3">
             <LessonSelector
               lessons={lessons}
               selectedLessonId={lessonId}
@@ -481,26 +492,21 @@ export default function TypingTest({ locale: _locale }: Props) {
               onSelectLesson={handleSelectLesson}
               onSelectMode={handleSelectMode}
             />
-          )}
+          </div>
 
-          {/* Word display */}
-          <WordDisplay
-            words={words}
-            currentWordIndex={wordIndex}
-            currentCharIndex={charIndex}
-            focused={focused}
-            onFocusRequest={focusInput}
-          />
-
-          {/* On-screen keyboard (desktop only, hidden during results) */}
+          {/* On-screen keyboard (desktop only) */}
           <Keyboard pressedKeys={pressedKeys} shiftHeld={shiftHeld} />
 
-          {/* Restart hint */}
-          {phase === 'running' && (
-            <p class="text-center text-xs text-clay/40 dark:text-stone-600">
-              Tab + Enter — पुनः आरम्भ
-            </p>
-          )}
+          {/* Bottom hints */}
+          <div class="w-full hidden md:flex justify-between items-center text-[10px] uppercase tracking-widest text-manuscript-accent/40 dark:text-stone-700 mt-2 md:mt-3 px-4 shrink-0">
+            <div class="flex items-center gap-1.5">
+              <span class="px-1.5 py-0.5 border border-manuscript-accent/15 dark:border-charcoal-700 rounded-md bg-white/50 dark:bg-charcoal-800/50 text-manuscript-accent/50 dark:text-stone-600">tab</span>
+              <span>+</span>
+              <span class="px-1.5 py-0.5 border border-manuscript-accent/15 dark:border-charcoal-700 rounded-md bg-white/50 dark:bg-charcoal-800/50 text-manuscript-accent/50 dark:text-stone-600">enter</span>
+              <span class="ml-1">to restart</span>
+            </div>
+            <span>Layout: Devanagari Inscript</span>
+          </div>
         </>
       )}
     </div>

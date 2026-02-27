@@ -84,11 +84,6 @@
     @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vermillion;
   }
 
-  /* Typing caret pulse — smooth fade */
-  .caret-pulse {
-    animation: caret-pulse 1s ease-in-out infinite;
-  }
-
   /* Fade in for results screen */
   .animate-fadeIn {
     animation: fadeIn 200ms ease-out both;
@@ -102,11 +97,30 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-}
 
-@keyframes caret-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+  /* No scrollbar — used on typing page main area */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Lotus / cross-hatch pattern — subtle manuscript grid */
+  .lotus-pattern {
+    background-color: transparent;
+    opacity: 0.4;
+    background-image: linear-gradient(#d53e20 0.8px, transparent 0.8px),
+                       linear-gradient(to right, #d53e20 0.8px, #fbf9f8 0.8px);
+    background-size: 24px 24px;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+  }
+
+  .dark .lotus-pattern {
+    background-image: linear-gradient(rgba(213, 62, 32, 0.5) 0.8px, transparent 0.8px),
+                       linear-gradient(to right, rgba(213, 62, 32, 0.5) 0.8px, #211411 0.8px);
+  }
 }
 
 @keyframes fadeIn {
