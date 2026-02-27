@@ -1,0 +1,63 @@
+---
+import DarkModeToggle from '../components/islands/common/DarkModeToggle.tsx';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'MonkeyType शैली में हिन्दी टाइपिंग अभ्यास। INSCRIPT कीबोर्ड के क्रमिक पाठ।' } = Astro.props;
+const locale = Astro.currentLocale ?? 'hi';
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = `${title} | संस्कृत शिक्षा`;
+---
+<html lang={locale} class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{fullTitle}</title>
+
+    <link rel="canonical" href={canonicalUrl.href} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl.href} />
+
+    <meta name="theme-color" content="#fbf9f8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#211411" media="(prefers-color-scheme: dark)" />
+
+    <link rel="preload" href="/fonts/TiroDevanagariSanskrit-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/NotoSansDevanagari-Regular.woff2" as="font" type="font/woff2" crossorigin />
+
+    <script is:inline>
+      try {
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch(e) {}
+    </script>
+  </head>
+  <body class="min-h-[100dvh] flex flex-col font-sans bg-paper dark:bg-charcoal-900">
+    <!-- Minimal top bar -->
+    <header class="h-12 flex items-center justify-between px-4 max-w-4xl w-full mx-auto">
+      <a
+        href="/hi/learn"
+        class="text-sm font-bold text-vermillion dark:text-vermillion-light hover:text-vermillion-dark transition-colors min-h-[44px] inline-flex items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vermillion rounded"
+      >
+        <span lang="sa">संस्कृत शिक्षा</span>
+      </a>
+      <DarkModeToggle client:load />
+    </header>
+
+    <main class="flex-1 flex flex-col justify-center">
+      <div class="max-w-4xl w-full mx-auto px-4">
+        <slot />
+      </div>
+    </main>
+  </body>
+</html>

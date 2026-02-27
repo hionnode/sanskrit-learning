@@ -83,6 +83,35 @@
   .focus-ring {
     @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vermillion;
   }
+
+  /* Typing caret pulse — smooth fade */
+  .caret-pulse {
+    animation: caret-pulse 1s ease-in-out infinite;
+  }
+
+  /* Fade in for results screen */
+  .animate-fadeIn {
+    animation: fadeIn 200ms ease-out both;
+  }
+
+  /* Hide scrollbar for lesson pill overflow */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes caret-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Print styles */

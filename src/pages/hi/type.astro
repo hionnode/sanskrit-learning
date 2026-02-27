@@ -1,0 +1,7 @@
+---
+import TypingLayout from '../../layouts/TypingLayout.astro';
+import TypingTest from '../../components/islands/typing/TypingTest.tsx';
+---
+<TypingLayout title="टाइपिंग अभ्यास" description="MonkeyType शैली में हिन्दी टाइपिंग अभ्यास। INSCRIPT कीबोर्ड के क्रमिक पाठ, WPM और सटीकता ट्रैकिंग।">
+  <TypingTest client:load locale="hi" />
+</TypingLayout>
