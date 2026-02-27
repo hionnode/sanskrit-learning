@@ -1,6 +1,6 @@
 /** Typing test configuration and state types */
 
-export type TestMode = 'time' | 'words';
+export type TestMode = 'words' | 'time' | 'quote' | 'zen';
 export type TestPhase = 'idle' | 'running' | 'finished';
 
 export interface TestConfig {
@@ -59,12 +59,13 @@ export interface TypingPrefs {
 
 export interface Lesson {
   id: number;
+  stage: string;
   label_hi: string;
   label_en: string;
   /** Characters in this lesson's practice pool */
   keys: string[];
-  /** Pre-defined words (for word-based lessons 10-12) */
+  /** Pre-defined words for word-based lessons */
   words?: string[];
-  /** Pre-defined combinations (for combo lessons 3, 6, 9) */
+  /** Pre-defined combinations for combo lessons */
   combos?: string[];
 }

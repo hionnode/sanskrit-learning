@@ -8,6 +8,7 @@ import type {
   TypingPrefs,
 } from '../../../lib/typing-types';
 import { lessons, generateSequence } from '../../../data/typing-lessons';
+import { getRandomQuote } from '../../../data/typing-quotes';
 import WordDisplay from './WordDisplay';
 import StatsBar from './StatsBar';
 import LessonSelector from './LessonSelector';
@@ -181,8 +182,23 @@ export default function TypingTest({ locale: _locale }: Props) {
   const lesson = lessons.find((l) => l.id === lessonId) || lessons[0];
 
   function resetTest() {
-    const count = mode === 'words' ? modeValue : modeValue * 3;
-    const seq = generateSequence(lesson, count);
+    let seq: string[];
+
+    if (mode === 'quote') {
+      const lengthMap: Record<number, 'short' | 'medium' | 'long'> = {
+        1: 'short',
+        2: 'medium',
+        3: 'long',
+      };
+      const quote = getRandomQuote(lengthMap[modeValue] || 'medium');
+      seq = quote.text.split(/\s+/);
+    } else if (mode === 'zen') {
+      seq = generateSequence(lesson, 200);
+    } else {
+      const count = mode === 'words' ? modeValue : modeValue * 3;
+      seq = generateSequence(lesson, count);
+    }
+
     setWords(buildWords(seq));
     setWordIndex(0);
     setCharIndex(0);
@@ -210,7 +226,7 @@ export default function TypingTest({ locale: _locale }: Props) {
     let extra = 0;
     let missed = 0;
 
-    const countUpTo = mode === 'words' ? words.length : wordIndex + 1;
+    const countUpTo = mode === 'words' || mode === 'quote' ? words.length : wordIndex + 1;
     for (let wi = 0; wi < Math.min(countUpTo, words.length); wi++) {
       const w = words[wi];
       for (const ch of w.chars) {
@@ -368,7 +384,7 @@ export default function TypingTest({ locale: _locale }: Props) {
       return next;
     });
 
-    if (mode === 'words' && nextWordIndex >= modeValue) {
+    if ((mode === 'words') && nextWordIndex >= modeValue) {
       setTimeout(() => finishTest(), 0);
       return;
     }
@@ -491,6 +507,7 @@ export default function TypingTest({ locale: _locale }: Props) {
               disabled={phase === 'running'}
               onSelectLesson={handleSelectLesson}
               onSelectMode={handleSelectMode}
+              onRestart={resetTest}
             />
           </div>
 
