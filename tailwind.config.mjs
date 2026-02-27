@@ -25,10 +25,12 @@ export default {
         paper: '#fbf9f8',
         'surface-palm': '#fdf6e3',
         'surface-bark': '#eaddd7',
+        'surface-paper': '#f4efea',
         // Borders
         'border-subtle': '#e8e1df',
         // Text
         ink: '#1b100e',
+        'ink-light': '#8c7e7a',
         clay: '#7a4a3f',
         // Accents
         gold: {
@@ -36,6 +38,7 @@ export default {
           bright: '#d4af37',
         },
         turmeric: '#f59e0b',
+        'manuscript-accent': '#955c50',
         // Dark mode
         charcoal: {
           600: '#57534E',
@@ -68,10 +71,21 @@ export default {
         'card': '0 2px 10px -1px rgba(88, 56, 45, 0.1)',
         'card-hover': '0 10px 25px -5px rgba(88, 56, 45, 0.2)',
         'page': '0 4px 20px -2px rgba(88, 56, 45, 0.15)',
+        'key': '0 2px 0px 0px rgba(149, 92, 80, 0.3)',
       },
       backgroundImage: {
         'vermillion-gradient': 'linear-gradient(135deg, #d53e20 0%, #a02e16 100%)',
-        'gradient-palmleaf': 'linear-gradient(180deg, rgba(244,239,234,0.4) 0%, rgba(227,216,203,0.4) 100%)',
+        'gradient-palmleaf': 'linear-gradient(180deg, rgba(244,239,234,0.4) 0%, rgba(227,216,203,0.6) 100%)',
+        'gradient-lamp': 'radial-gradient(circle at center, rgba(255, 230, 180, 0.3) 0%, rgba(213, 62, 32, 0.05) 50%, transparent 70%)',
+      },
+      animation: {
+        'cursor-blink': 'blink 1s step-end infinite',
+      },
+      keyframes: {
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
+        },
       },
       typography: ({ theme }) => ({
         DEFAULT: {

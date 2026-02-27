@@ -16,19 +16,19 @@ export default function ResultsScreen({
   onNextLesson,
 }: Props) {
   return (
-    <div class="text-center py-6 space-y-6 animate-fadeIn" aria-live="polite">
+    <div class="text-center py-6 space-y-6 animate-fadeIn w-full" aria-live="polite">
       {/* Main WPM */}
       <div>
-        <div class="text-5xl font-bold text-vermillion dark:text-vermillion-light tabular-nums">
+        <div class="text-6xl font-extrabold text-vermillion dark:text-vermillion-light tabular-nums">
           {result.netWpm}
         </div>
-        <p class="text-sm text-clay dark:text-stone-400 mt-1">
+        <p class="text-[10px] uppercase tracking-widest text-manuscript-accent/60 dark:text-stone-500 mt-2">
           शुद्ध WPM
         </p>
       </div>
 
       {/* Stats grid */}
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-lg mx-auto">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-lg mx-auto">
         <StatBox label="कच्चा WPM" value={result.rawWpm} />
         <StatBox label="सटीकता" value={`${result.accuracy}%`} />
         <StatBox label="समय" value={`${result.totalTime}s`} />
@@ -49,25 +49,25 @@ export default function ResultsScreen({
         <span class="text-red-500/70 dark:text-red-400/70">
           <span class="font-bold">{result.extraChars}</span> अतिरिक्त
         </span>
-        <span class="text-clay dark:text-stone-500">
+        <span class="text-manuscript-accent dark:text-stone-500">
           <span class="font-bold">{result.missedChars}</span> छूटे
         </span>
       </div>
 
-      <p class="text-sm text-clay dark:text-stone-400">{lessonLabel}</p>
+      <p class="text-sm text-manuscript-accent dark:text-stone-400">{lessonLabel}</p>
 
       {/* Actions */}
       <div class="flex items-center justify-center gap-4 flex-wrap">
         <button
           onClick={onRestart}
-          class="px-6 py-3 border-2 border-vermillion text-vermillion dark:text-vermillion-light hover:bg-vermillion/10 rounded-lg font-medium transition-colors min-h-[44px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vermillion"
+          class="px-6 py-3 border-2 border-vermillion text-vermillion dark:text-vermillion-light hover:bg-vermillion/10 rounded-xl font-medium transition-colors min-h-[44px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vermillion"
         >
           पुनः प्रयास
         </button>
         {hasNextLesson && (
           <button
             onClick={onNextLesson}
-            class="inline-flex items-center gap-2 px-6 py-3 bg-vermillion hover:bg-vermillion-dark text-white rounded-lg font-medium transition-colors min-h-[44px]"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-vermillion hover:bg-vermillion-dark text-white rounded-xl font-medium transition-colors min-h-[44px]"
           >
             अगला पाठ
             <svg
@@ -99,11 +99,13 @@ function StatBox({
   value: string | number;
 }) {
   return (
-    <div class="p-3 rounded-lg bg-surface-palm dark:bg-charcoal-800 border border-border-subtle dark:border-charcoal-700">
-      <div class="text-xl font-bold text-ink dark:text-stone-100 tabular-nums">
+    <div class="p-3 rounded-xl bg-surface-paper/60 dark:bg-charcoal-800 backdrop-blur-sm border border-manuscript-accent/10 dark:border-charcoal-700">
+      <div class="text-xl font-extrabold text-ink dark:text-stone-100 tabular-nums">
         {value}
       </div>
-      <div class="text-xs text-clay dark:text-stone-400 mt-0.5">{label}</div>
+      <div class="text-[10px] uppercase tracking-widest text-manuscript-accent/60 dark:text-stone-500 mt-0.5">
+        {label}
+      </div>
     </div>
   );
 }

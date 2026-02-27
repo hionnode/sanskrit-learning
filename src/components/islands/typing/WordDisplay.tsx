@@ -25,7 +25,6 @@ export default function WordDisplay({
     const container = containerRef.current;
     if (!container) return;
 
-    // Find the target character span
     const selector = `[data-word="${currentWordIndex}"][data-char="${currentCharIndex}"]`;
     const target = container.querySelector(selector) as HTMLElement | null;
 
@@ -38,7 +37,6 @@ export default function WordDisplay({
         height: targetRect.height - 8,
       });
     } else {
-      // Caret is past the last char of the current word — find the word's last char
       const lastCharSel = `[data-word="${currentWordIndex}"][data-char="${Math.max(0, currentCharIndex - 1)}"]`;
       const lastChar = container.querySelector(lastCharSel) as HTMLElement | null;
       if (lastChar) {
@@ -58,20 +56,23 @@ export default function WordDisplay({
     const container = containerRef.current;
     if (!container) return;
 
-    const lineHeight = 48; // ~3rem line
+    const lineHeight = 72;
     const targetScroll = Math.max(0, caretPos.top - lineHeight * 0.25);
     container.scrollTop = targetScroll;
   }, [caretPos.top]);
 
   return (
     <div
-      class="relative select-none cursor-text"
+      class="w-full relative py-4 md:py-8 group transition-all duration-500 focus-within:scale-[1.005] rounded-3xl select-none cursor-text"
       onClick={onFocusRequest}
     >
-      {/* Unfocused state — text fades */}
+      {/* Subtle grid pattern */}
+      <div class="absolute inset-0 lotus-pattern pointer-events-none opacity-[0.05]"></div>
+
+      {/* Unfocused overlay */}
       {!focused && (
-        <div class="absolute inset-0 z-10 flex items-center justify-center">
-          <span class="text-clay dark:text-stone-400 text-lg font-medium">
+        <div class="absolute inset-0 z-10 flex items-center justify-center rounded-3xl">
+          <span class="text-manuscript-accent dark:text-stone-400 text-lg font-medium">
             टाइप करने के लिए यहाँ क्लिक करें
           </span>
         </div>
@@ -79,28 +80,28 @@ export default function WordDisplay({
 
       <div
         ref={containerRef}
-        class={`relative overflow-hidden font-devanagari text-2xl leading-[3rem] h-[6rem] md:h-[9rem] px-4 py-2 transition-opacity ${
-          !focused ? 'opacity-20' : ''
+        class={`relative z-[1] overflow-hidden font-devanagari text-2xl md:text-4xl lg:text-5xl leading-[1.8] h-[5rem] md:h-[10rem] text-center break-words outline-none max-w-4xl mx-auto px-2 md:px-4 transition-opacity ${
+          !focused ? 'opacity-15' : ''
         }`}
         style={{ scrollBehavior: 'smooth' }}
       >
-        {/* Smooth caret */}
+        {/* Caret */}
         {focused && (
           <div
             ref={caretRef}
-            class="absolute w-[2px] bg-vermillion dark:bg-vermillion-light rounded-full caret-pulse z-10 pointer-events-none"
+            class="absolute w-[3px] md:w-[4px] bg-vermillion dark:bg-vermillion-light rounded-full animate-cursor-blink z-10 pointer-events-none"
             style={{
               left: `${caretPos.left}px`,
               top: `${caretPos.top}px`,
-              height: `${caretPos.height || 32}px`,
+              height: `${caretPos.height || 40}px`,
               transition: 'left 100ms ease-out, top 100ms ease-out',
             }}
           />
         )}
 
-        <div class="flex flex-wrap">
+        <div class="flex flex-wrap justify-center">
           {words.map((word, wi) => (
-            <span key={wi} class="inline-flex mr-[0.5em]">
+            <span key={wi} class="inline-flex mr-[0.4em]">
               {word.chars.map((ch, ci) => {
                 const isPastWord = wi < currentWordIndex;
                 const isCurrentWord = wi === currentWordIndex;
@@ -113,11 +114,10 @@ export default function WordDisplay({
                 } else if (ch.status === 'extra') {
                   colorClass = 'text-red-400 bg-red-50/50 dark:bg-red-900/20 rounded-sm';
                 } else {
-                  // pending
                   colorClass =
                     isPastWord || (isCurrentWord && ci < currentCharIndex)
-                      ? 'text-red-500 dark:text-red-400' // missed
-                      : 'text-clay/25 dark:text-stone-700';
+                      ? 'text-red-500 dark:text-red-400'
+                      : 'text-ink-light/30 dark:text-stone-700';
                 }
 
                 return (
